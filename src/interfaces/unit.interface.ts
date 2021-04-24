@@ -5,17 +5,17 @@ export interface Unit {
   floorplanId: number
   leaseStatus: string
   unitNumber: string
-  internalAvailableDate?: string
-  vacantDate?: string
+  internalAvailableDate?: string | null
+  vacantDate?: string | null
   displayed: boolean
   numberOfBeds: number
   numberOfBaths: number
   floorNumber: number
   squareFeet: number
   rent?: number
-  minLeaseTermInMonth?: number
-  maxLeaseTermInMonth?: number
-  depositInMonths?: number
+  minLeaseTermInMonth?: number | null
+  maxLeaseTermInMonth?: number | null
+  depositInMonths?: number | null
   displayOrder: number
   active: boolean
   rentModifiedType: string
@@ -24,19 +24,19 @@ export interface Unit {
   buildingId: number
   buildingName: string
   unitPartnerId: string
-  floorplanPartnerId?: string
+  floorplanPartnerId?: string | null
   newAudit: NewAudit
   floorPlanImages: FloorPlanImage[]
-  amenityList?: AmenityList[]
+  amenityList?: AmenityList[] | null
   hasRentMatrix: boolean
-  unitLeasedStatus?: string
-  unitOccupancyStatus?: string
+  unitLeasedStatus?: string | null
+  unitOccupancyStatus?: string | null
   partnerName: string
   partnerPropertyId: string
   entityName: string
   entityId: number
-  unitOnHold?: boolean
-  militarySubdivisionName?: string
+  unitOnHold?: boolean | null
+  militarySubdivisionName?: string | null
 }
 
 export interface NewAudit {
