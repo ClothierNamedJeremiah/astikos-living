@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Astikós Living | [![Netlify Status](https://api.netlify.com/api/v1/badges/6290c913-edd8-476a-8b10-2db9753be55e/deploy-status)](https://app.netlify.com/sites/astikos-living/deploys)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
