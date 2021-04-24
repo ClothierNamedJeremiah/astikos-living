@@ -13,7 +13,7 @@ export default class PriceFilter implements IFilter {
 
   filter(unit: Unit): boolean {
     if (unit.rent) {
-      return this.minPrice < unit.rent && unit.rent < this.maxPrice;
+      return this.minPrice <= unit.rent && unit.rent <= this.maxPrice;
     }
     return false;
   }
