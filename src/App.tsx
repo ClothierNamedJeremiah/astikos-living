@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-function App() {
-  return (
-    <div>
-      Astikós Living
-    </div>
-  );
-}
+const App : React.FC = (): ReactElement => (
+  <div>
+    Astikós Living
+  </div>
+);
 
 export default App;
