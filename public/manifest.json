@@ -1,6 +1,7 @@
 {
-  "short_name": "Astikos Living",
-  "name": "astikos lofts apartment availability",
+  "short_name": "Astikós Living",
+  "name": "Astikós Living: Explore all apartments at Astikós Lofts in Tigard, OR",
+  "description": "Explore all apartments at Astikós Lofts in Tigard, OR",
   "icons": [
     {
       "src": "favicon.ico",
@@ -14,6 +15,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#3b8b91",
+  "background_color": "#fffaf5"
 }
