@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import { units } from './api/sample.json';
-import FloorPlanName from './enums/FloorPlanName';
+import FloorPlan from './enums/FloorPlan';
 import { Unit } from './interfaces/unit.interface';
 
 const App : React.FC = (): ReactElement => (
@@ -15,7 +15,7 @@ const App : React.FC = (): ReactElement => (
     {units.sort((unitA: Unit, unitB: Unit): number => unitA.floorplanId - unitB.floorplanId)
       .map((u: Unit): ReactElement => (
         <>
-          <p style={{ fontWeight: 'bold', marginBottom: '-12px' }}>{FloorPlanName[u.floorplanId]} - {u.name}</p>
+          <p style={{ fontWeight: 'bold', marginBottom: '-12px' }}>{FloorPlan[u.floorplanId]} - {u.name}</p>
           <p style={{ marginLeft: '6px' }}>{u.vacantDate?.split(' ')[0] || u.leaseStatus} - {u.rent || 'none'}</p>
         </>
       ))}

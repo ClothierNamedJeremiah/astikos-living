@@ -1,7 +1,7 @@
 // this is an "enum" but TypeScript enums cannot have numeric keys, so it's actually an object
 type Dictionary = { [index: number]: string }
 
-const FloorPlanName: Dictionary = {
+const FloorPlan: Dictionary = {
   9214480: 'S1',
   9214481: 'A1',
   9214482: 'A2',
@@ -18,4 +18,4 @@ const FloorPlanName: Dictionary = {
   9214493: 'B4L',
 };
 
-export default FloorPlanName;
+export default FloorPlan;
