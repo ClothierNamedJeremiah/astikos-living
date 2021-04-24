@@ -1,5 +1,3 @@
-import AmenityType from '../enums/AmenityType';
-
 export interface Unit {
   id: number
   name: string
@@ -70,7 +68,7 @@ export interface AmenityList {
   display: boolean
   leased: boolean
   description: string
-  amenityType: AmenityType
+  amenityType: string
   actualName: string
   partnerPropertyIds: string[]
 }
