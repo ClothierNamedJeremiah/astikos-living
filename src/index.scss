@@ -1,10 +1,12 @@
 @import-normalize;
 
-$color-light: rgb(255, 250, 245);
-$color-dark: rgb(42,42,42);
-$color-primary: rgb(59,139,145);
-$color-secondary: rgb(243,206,184);
-$color-secondary-dark: rgb(231, 185, 159);
+:root {
+  --color-light: rgb(255, 250, 245);
+  --color-dark: rgb(42,42,42);
+  --color-primary: rgb(59,139,145);
+  --color-secondary: rgb(243,206,184);
+  --color-secondary-dark: rgb(231, 185, 159);
+}
 
 body {
   margin: 0;
@@ -14,8 +16,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: $color-light;
-  color: $color-dark;
+  background-color: var(--color-light);
+  color: var(--color-dark);
 }
 
 code {
@@ -28,12 +30,12 @@ main {
 }
 
 h1 {
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 button {
-  background-color: $color-secondary;
-  border-color: $color-secondary-dark;
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary-dark);
   border-radius: 48px;
   border-style: solid;
   outline: none;
