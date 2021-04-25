@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import FloorPlan from '../enums/FloorPlan';
+import FloorPlan from '../enums/FloorPlanType';
 import { Unit } from '../interfaces/unit.interface';
 
 const UnitCard: React.FC<{ unit: Unit }> = ({ unit }): ReactElement => unit && (

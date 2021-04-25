@@ -8,12 +8,12 @@ export default class UnitFilter implements IFilter {
     this.filters = [];
   }
 
-  addFilter(filter: IFilter): void {
-    this.filters.push(filter);
-  }
-
   filter(unit: Unit): boolean {
     return this.filters.every((filter) => filter.filter(unit));
+  }
+
+  addFilter(filter: IFilter): void {
+    this.filters.push(filter);
   }
 
   filterUnits(units: Unit[]): Unit[] {
