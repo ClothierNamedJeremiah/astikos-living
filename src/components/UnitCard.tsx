@@ -13,7 +13,6 @@ const UnitCard = (props: Props): ReactElement => {
   const {
     amenityList,
     name,
-    floorplanId,
     rent,
     leaseStatus,
     vacantDate,

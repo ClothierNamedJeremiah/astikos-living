@@ -26,10 +26,12 @@ import { units as mockData } from '../api/sample.json';
 const App : React.FC = (): ReactElement => {
   const STATIC_UNIT_DATA = useRef<Unit[]>(mockData);
 
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const [amenities, setAmenties] = useState([]);
   const [floorPlan, setFloorPlan] = useState<FloorPlan>(new FloorPlan(FloorPlanType.B2));
   const [leaseStatus, setLeaseStatus] = useState(LeaseStatus.ANY);
   const [priceRange, setPriceRange] = useState([-Infinity, Infinity]);
+  /* eslint-enable @typescript-eslint/no-unused-vars */
 
   const [units, setUnits] = useState<Unit[]>([]);
 

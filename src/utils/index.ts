@@ -10,6 +10,4 @@ export const getUnitAmenityNames = (unit: Unit): Set<string> => {
 };
 
 // should be removed if additional helper is added
-export const doNothing = () => {
-  console.log('hi');
-};
+export const doNothing = (): null => null;
