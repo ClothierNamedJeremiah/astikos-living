@@ -12,7 +12,10 @@ export default class AmenityFilter implements IFilter {
   }
 
   filter(unit: Unit): boolean {
+    if (this.ammenities === []) {
+      return true;
+    }
     const amentityNames: Set<string> = getUnitAmenityNames(unit);
-    return this.ammenities.some((amenity) => amentityNames.has(amenity));
+    return this.ammenities.every((amenity) => amentityNames.has(amenity));
   }
 }

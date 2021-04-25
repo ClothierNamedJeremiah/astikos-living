@@ -10,6 +10,9 @@ export default class LeaseStatusFilter implements IFilter {
   }
 
   filter(unit: Unit): boolean {
+    if (this.leaseStatus === LeaseStatus.ANY) {
+      return true;
+    }
     return unit.leaseStatus === this.leaseStatus;
   }
 }

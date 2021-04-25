@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-shadow
-const enum AmenityType {
+enum AmenityType {
   ADA = 'ADA',
   AMENITY_PROXIMITY = 'Amenity proximity',
   CORNER = 'Corner',

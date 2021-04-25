@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-shadow
-const enum LeaseStatus {
+enum LeaseStatus {
   AVAILABLE_READY = 'AVAILABLE_READY',
+  ANY = 'ANY',
   LEASED = 'LEASED',
 }
 
