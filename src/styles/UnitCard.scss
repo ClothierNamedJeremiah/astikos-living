@@ -13,14 +13,9 @@
 
 
   & > *:first-child {
-    padding-top: 8px;
+    padding: 8px 16px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-  }
-
-  & > * {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 
@@ -30,7 +25,6 @@
   align-items: center;
   
   background-color: var(--color-primary);
-  margin-bottom: 1em;
   
   & > .unit-name {
     font-weight: 600;
@@ -43,8 +37,13 @@
 }
 
 .unit-lease {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
   text-align: center;
-  margin-bottom: 1em;
+  padding: 1em;
 }
 
 .unit-ammenities {
@@ -55,7 +54,7 @@
   align-content: center;
 
   flex-grow: 1;
-  padding-bottom: 8px;
+  padding: 0 16px 8px 16px;
   font-size: 12px;
 
   user-select: none;
