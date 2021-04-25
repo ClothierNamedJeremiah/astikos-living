@@ -27,7 +27,7 @@ const UnitCard = (props: Props): ReactElement => {
         <div className="unit-rent">{rent?.toLocaleString()}</div>
       </div>
       <div className="unit-lease">{leaseInformation}</div>
-      <div className="unit-ammenities">
+      <div className="unit-amenities">
         {amenityList && amenityList.map((item) => (
           <span>{item.name}</span>
         ))}

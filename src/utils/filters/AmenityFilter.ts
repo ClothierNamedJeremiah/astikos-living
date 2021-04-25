@@ -5,17 +5,25 @@ import { IFilter } from '../../interfaces/filter.interface';
 import { getUnitAmenityNames } from '..';
 
 export default class AmenityFilter implements IFilter {
-  ammenities: AmenityType[];
+  amenities: Record<AmenityType | string, boolean>;
 
-  constructor(ammenities: AmenityType[]) {
-    this.ammenities = ammenities;
+  constructor(amenities: Record<AmenityType, boolean>) {
+    this.amenities = amenities;
   }
 
   filter(unit: Unit): boolean {
-    if (this.ammenities === []) {
-      return true;
-    }
+    const filteredAmenityNames = this.getAmenityNamesBeingFiltered();
     const amentityNames: Set<string> = getUnitAmenityNames(unit);
-    return this.ammenities.every((amenity) => amentityNames.has(amenity));
+    return filteredAmenityNames.every((amenity) => amentityNames.has(amenity));
+  }
+
+  getAmenityNamesBeingFiltered(): string[] {
+    const filteredAmenityNames: string[] = [];
+    Object.keys(this.amenities).forEach((key) => {
+      if (this.amenities[key]) {
+        filteredAmenityNames.push(key.valueOf());
+      }
+    });
+    return filteredAmenityNames;
   }
 }

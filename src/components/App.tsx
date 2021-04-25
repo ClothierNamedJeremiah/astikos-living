@@ -22,13 +22,24 @@ import FloorPlanSelect from './FloorPlanSelect';
 import '../styles/App.scss';
 
 import { units as mockData } from '../api/sample.json';
+import Amenities from './Amenities';
+import AmenityType from '../enums/AmenityType';
 
 const App : React.FC = (): ReactElement => {
   const STATIC_UNIT_DATA = useRef<Unit[]>(mockData);
 
-  /* eslint-disable @typescript-eslint/no-unused-vars */
-  const [amenities, setAmenties] = useState([]);
+  const [amenities, setAmenties] = useState({
+    [AmenityType.ADA]: false,
+    [AmenityType.AMENITY_PROXIMITY]: false,
+    [AmenityType.CORNER]: false,
+    [AmenityType.EXTRA_LARGE_BALCONY]: false,
+    [AmenityType.FIRST_FLOOR]: false,
+    [AmenityType.NEIGHBORHOOD_VIEW]: false,
+    [AmenityType.TOP_FLOOR]: false,
+    [AmenityType.WETLAND_VIEW]: false,
+  });
   const [floorPlan, setFloorPlan] = useState<FloorPlan>(new FloorPlan(FloorPlanType.B2));
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const [leaseStatus, setLeaseStatus] = useState(LeaseStatus.ANY);
   const [priceRange, setPriceRange] = useState([-Infinity, Infinity]);
   /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -51,6 +62,7 @@ const App : React.FC = (): ReactElement => {
       <h4>Do you want to live at <a href="https://www.astikoslofts.com/">Astikós Lofts</a>?</h4>
       <p>Please explore this website to view the details of all their units.</p>
       <FloorPlanSelect floorPlan={floorPlan} setFloorPlan={setFloorPlan} />
+      <Amenities amenities={amenities} setAmenties={setAmenties} />
       <button className="floor-plan-button" type="button">
         Select a Floor Plan
       </button>
