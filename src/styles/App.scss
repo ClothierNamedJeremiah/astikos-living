@@ -1,0 +1,17 @@
+.title {
+  margin-bottom: 36px;
+}
+
+.floor-plan-button {
+  margin: 24px 0px;
+}
+
+.units {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  & > * {
+    flex-basis: 250px;
+  }
+}

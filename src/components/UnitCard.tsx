@@ -1,13 +1,40 @@
 import React, { ReactElement } from 'react';
 
-import FloorPlan from '../enums/FloorPlanType';
 import { Unit } from '../interfaces/unit.interface';
 
-const UnitCard: React.FC<{ unit: Unit }> = ({ unit }): ReactElement => unit && (
-  <>
-    <p style={{ fontWeight: 'bold', marginBottom: '-12px' }}>{FloorPlan[unit.floorplanId]} - {unit.name}</p>
-    <p style={{ marginLeft: '6px' }}>{unit.vacantDate?.split(' ')[0] || unit.leaseStatus} - {unit.rent || 'none'}</p>
-  </>
-);
+import '../styles/UnitCard.scss';
+
+interface Props {
+  unit: Unit
+}
+
+const UnitCard = (props: Props): ReactElement => {
+  const { unit } = props;
+  const {
+    amenityList,
+    name,
+    floorplanId,
+    rent,
+    leaseStatus,
+    vacantDate,
+  } = unit;
+
+  const leaseInformation = vacantDate?.split(' ')[0] || leaseStatus || 'none';
+
+  return (
+    <div className="unit">
+      <div className="unit-header">
+        <div className="unit-name">{name}</div>
+        <div className="unit-rent">{rent?.toLocaleString()}</div>
+      </div>
+      <div className="unit-lease">{leaseInformation}</div>
+      <div className="unit-ammenities">
+        {amenityList && amenityList.map((item) => (
+          <span>{item.name}</span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default UnitCard;
