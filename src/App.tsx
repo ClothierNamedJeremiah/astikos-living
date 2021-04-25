@@ -5,27 +5,29 @@ import React, {
   ReactElement,
 } from 'react';
 
-import { units as mockData } from './api/sample.json';
-import UnitCard from './components/UnitCard';
-import FloorPlanSelect from './components/FloorPlanSelect';
+import FloorPlanType from './enums/FloorPlanType';
+import LeaseStatus from './enums/LeaseStatus';
 import { Unit } from './interfaces/unit.interface';
 
-import './App.scss';
-
-import LeaseStatus from './enums/LeaseStatus';
-
+import FloorPlan from './utils/FloorPlan';
 import AmenityFilter from './utils/filters/AmenityFilter';
 import FloorPlanFilter from './utils/filters/FloorPlanFilter';
 import LeaseStatusFilter from './utils/filters/LeaseStatusFilter';
 import PriceFilter from './utils/filters/PriceFilter';
 import UnitFilter from './utils/filters/UnitFilter';
-import FloorPlan from './utils/FloorPlan';
+
+import UnitCard from './components/UnitCard';
+import FloorPlanSelect from './components/FloorPlanSelect';
+
+import './App.scss';
+
+import { units as mockData } from './api/sample.json';
 
 const App : React.FC = (): ReactElement => {
   const STATIC_UNIT_DATA = useRef<Unit[]>(mockData);
 
   const [amenities, setAmenties] = useState([]);
-  const [floorPlan, setFloorPlan] = useState<FloorPlan>(new FloorPlan(9214489));
+  const [floorPlan, setFloorPlan] = useState<FloorPlan>(new FloorPlan(FloorPlanType.B3));
   const [leaseStatus, setLeaseStatus] = useState(LeaseStatus.ANY);
   const [priceRange, setPriceRange] = useState([-Infinity, Infinity]);
 
